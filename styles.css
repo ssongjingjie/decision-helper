@@ -1,0 +1,338 @@
+/* 基本样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', serif;
+    line-height: 1.6;
+    color: #e0d5c1;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 头部样式 */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+header::before {
+    content: '✧';
+    position: absolute;
+    left: 50%;
+    top: -20px;
+    transform: translateX(-50%);
+    color: #c7a45d;
+    font-size: 24px;
+}
+
+header::after {
+    content: '✧';
+    position: absolute;
+    left: 50%;
+    bottom: -20px;
+    transform: translateX(-50%);
+    color: #c7a45d;
+    font-size: 24px;
+}
+
+h1 {
+    color: #c7a45d;
+    margin-bottom: 10px;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(199, 164, 93, 0.3);
+}
+
+.description {
+    color: #a18f6f;
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+nav {
+    margin-bottom: 20px;
+}
+
+.nav-btn {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: 1px solid #c7a45d;
+    border-radius: 5px;
+    background-color: rgba(199, 164, 93, 0.1);
+    color: #c7a45d;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Times New Roman', serif;
+    letter-spacing: 1px;
+}
+
+.nav-btn:hover {
+    background-color: rgba(199, 164, 93, 0.2);
+    box-shadow: 0 0 15px rgba(199, 164, 93, 0.3);
+}
+
+.nav-btn.active {
+    background-color: rgba(199, 164, 93, 0.3);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(199, 164, 93, 0.4);
+}
+
+/* 决策区域样式 */
+.decision-section {
+    display: none;
+    background-color: rgba(26, 26, 46, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(199, 164, 93, 0.2);
+    border: 1px solid rgba(199, 164, 93, 0.3);
+    position: relative;
+}
+
+.decision-section::before {
+    content: '★';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #c7a45d;
+    opacity: 0.3;
+}
+
+.decision-section::after {
+    content: '★';
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: #c7a45d;
+    opacity: 0.3;
+}
+
+.decision-section.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+h2 {
+    color: #c7a45d;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.8em;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(199, 164, 93, 0.3);
+}
+
+.step {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: rgba(26, 26, 46, 0.6);
+    border-radius: 5px;
+    border: 1px solid rgba(199, 164, 93, 0.2);
+}
+
+h3 {
+    color: #c7a45d;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+    letter-spacing: 1px;
+}
+
+/* 输入组样式 */
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="number"] {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid rgba(199, 164, 93, 0.3);
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: rgba(26, 26, 46, 0.8);
+    color: #e0d5c1;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    outline: none;
+    border-color: #c7a45d;
+    box-shadow: 0 0 10px rgba(199, 164, 93, 0.3);
+}
+
+button {
+    padding: 8px 16px;
+    background-color: rgba(199, 164, 93, 0.2);
+    color: #c7a45d;
+    border: 1px solid #c7a45d;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Times New Roman', serif;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background-color: rgba(199, 164, 93, 0.3);
+    box-shadow: 0 0 15px rgba(199, 164, 93, 0.3);
+}
+
+button:disabled {
+    background-color: rgba(189, 195, 199, 0.2);
+    border-color: rgba(189, 195, 199, 0.3);
+    color: rgba(189, 195, 199, 0.5);
+    cursor: not-allowed;
+}
+
+/* 列表样式 */
+.options-list,
+.factors-list {
+    margin-bottom: 20px;
+}
+
+.option-item,
+.factor-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: rgba(26, 26, 46, 0.6);
+    border-radius: 4px;
+    border: 1px solid rgba(199, 164, 93, 0.2);
+}
+
+.delete-btn {
+    background-color: rgba(231, 76, 60, 0.2);
+    border-color: #e74c3c;
+    color: #e74c3c;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.delete-btn:hover {
+    background-color: rgba(231, 76, 60, 0.3);
+    box-shadow: 0 0 15px rgba(231, 76, 60, 0.3);
+}
+
+/* 评分表格样式 */
+.score-table {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid rgba(199, 164, 93, 0.2);
+}
+
+th {
+    background-color: rgba(26, 26, 46, 0.8);
+    color: #c7a45d;
+}
+
+/* 结果显示样式 */
+.result {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(26, 26, 46, 0.6);
+    border-radius: 5px;
+    text-align: center;
+    display: none;
+    border: 1px solid rgba(199, 164, 93, 0.3);
+    position: relative;
+}
+
+.result::before,
+.result::after {
+    content: '✧';
+    position: absolute;
+    color: #c7a45d;
+    font-size: 20px;
+}
+
+.result::before {
+    left: 20px;
+    top: 20px;
+}
+
+.result::after {
+    right: 20px;
+    bottom: 20px;
+}
+
+.result.active {
+    display: block;
+    animation: glowIn 0.5s ease;
+}
+
+@keyframes glowIn {
+    from {
+        opacity: 0;
+        box-shadow: 0 0 0 rgba(199, 164, 93, 0);
+    }
+    to {
+        opacity: 1;
+        box-shadow: 0 0 30px rgba(199, 164, 93, 0.2);
+    }
+}
+
+.result h3 {
+    color: #c7a45d;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+}
+
+.result p {
+    font-size: 24px;
+    color: #e0d5c1;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px rgba(199, 164, 93, 0.3);
+}
+
+/* 响应式设计 */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .input-group {
+        flex-direction: column;
+    }
+
+    .nav-btn {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .score-table {
+        font-size: 14px;
+    }
+} 
