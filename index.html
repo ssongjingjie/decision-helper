@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>决策助手</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>决策助手</h1>
+            <nav>
+                <button class="nav-btn active" data-target="simple">简单决策</button>
+                <button class="nav-btn" data-target="complex">复杂决策</button>
+            </nav>
+        </header>
+
+        <!-- 简单决策部分 -->
+        <section id="simple" class="decision-section active">
+            <h2>简单决策</h2>
+            <div class="input-group">
+                <input type="text" id="simple-option" placeholder="输入选项">
+                <button onclick="addSimpleOption()">添加选项</button>
+            </div>
+            <div id="simple-options-list" class="options-list"></div>
+            <button onclick="makeSimpleDecision()" class="decision-btn">开始决策</button>
+            <div id="simple-result" class="result"></div>
+        </section>
+
+        <!-- 复杂决策部分 -->
+        <section id="complex" class="decision-section">
+            <h2>复杂决策</h2>
+            
+            <!-- 添加选项 -->
+            <div class="step">
+                <h3>第一步：添加选项</h3>
+                <div class="input-group">
+                    <input type="text" id="complex-option" placeholder="输入选项">
+                    <button onclick="addComplexOption()">添加选项</button>
+                </div>
+                <div id="complex-options-list" class="options-list"></div>
+            </div>
+
+            <!-- 添加因素 -->
+            <div class="step">
+                <h3>第二步：添加决策因素</h3>
+                <div class="input-group">
+                    <input type="text" id="factor-name" placeholder="输入因素">
+                    <input type="number" id="factor-weight" placeholder="权重(1-10)" min="1" max="10" value="5">
+                    <button onclick="addFactor()">添加因素</button>
+                </div>
+                <div id="factors-list" class="factors-list"></div>
+            </div>
+
+            <!-- 评分表格 -->
+            <div class="step">
+                <h3>第三步：评分</h3>
+                <div id="score-table" class="score-table"></div>
+            </div>
+
+            <button onclick="makeComplexDecision()" class="decision-btn">计算结果</button>
+            <div id="complex-result" class="result"></div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
